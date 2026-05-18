@@ -1,0 +1,85 @@
+.warranty-bar-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.warranty-bar {
+  --bar-bg: #002c5f;
+  --bar-text: #00aad2;
+  --bar-separator: rgba(0, 170, 210, 0.2);
+  --bar-height: 75px;
+
+  background: var(--bar-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--bar-height);
+  width: 100%;
+}
+
+.warranty-bar > div {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.warranty-bar > div:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: var(--bar-separator);
+}
+
+.warranty-bar > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+}
+
+main .warranty-bar .button-container {
+  display: inline;
+}
+
+main .warranty-bar a.button:any-link,
+.warranty-bar a:any-link {
+  background: none;
+  border: none;
+  color: var(--bar-text);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+main .warranty-bar a.button:any-link:hover,
+.warranty-bar a:any-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.warranty-bar p {
+  margin: 0;
+}
+
+@media (width < 900px) {
+  .warranty-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 0;
+    gap: 8px;
+  }
+
+  .warranty-bar > div:not(:last-child)::after {
+    display: none;
+  }
+
+  .warranty-bar > div > div {
+    padding: 8px 16px;
+  }
+}

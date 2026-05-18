@@ -1,0 +1,93 @@
+.multi-image-blade-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.multi-image-blade {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each row = one card */
+.multi-image-blade > div {
+  position: relative;
+  flex: 1 1 25%;
+  min-width: 250px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+/* Image cell */
+.multi-image-blade > div > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.multi-image-blade > div > div:first-child picture,
+.multi-image-blade > div > div:first-child img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text overlay cell */
+.multi-image-blade > div > div:last-child {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgba(255 255 255 / 0.75) 0%, rgba(255 255 255 / 0.4) 40%, transparent 70%);
+}
+
+.multi-image-blade > div > div:last-child h3 {
+  font-family: var(--heading-font-family, sans-serif);
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.28;
+  color: #1c1b1b;
+  margin: 0 0 4px;
+}
+
+.multi-image-blade > div > div:last-child p {
+  margin: 0;
+}
+
+.multi-image-blade > div > div:last-child a {
+  color: #00aad2;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.multi-image-blade > div > div:last-child a::after {
+  content: ' \203A';
+  margin-left: 4px;
+}
+
+.multi-image-blade > div > div:last-child a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile: 2-column */
+@media (width < 600px) {
+  .multi-image-blade > div {
+    flex: 1 1 50%;
+    min-width: 0;
+  }
+
+  .multi-image-blade > div > div:last-child {
+    padding: 20px;
+  }
+
+  .multi-image-blade > div > div:last-child h3 {
+    font-size: 20px;
+  }
+}

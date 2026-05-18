@@ -1,0 +1,13 @@
+:root {
+  --heading-font-family: "Hyundai Sans Head", "Helvetica Neue", Arial, sans-serif;
+  --body-font-family: "Hyundai Sans Text", "Helvetica Neue", Arial, sans-serif;
+  --background-color: #ffffff;
+  --text-color: #1c1b1b;
+  --link-color: #00aad2;
+  --link-hover-color: #006c86;
+  --section-padding: 0px;
+  --nav-height: 86px;
+  --brand-dark: #002c5f;
+}
+
+html, body { overflow: auto !important; }

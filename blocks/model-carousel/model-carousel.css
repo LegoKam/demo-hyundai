@@ -1,0 +1,191 @@
+/* model-carousel block — "Popular Hyundai models" horizontal carousel */
+
+.model-carousel-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.model-carousel {
+  --carousel-bg: #fff;
+  --carousel-text: #1c1b1b;
+  --carousel-cta-bg: #002c5f;
+  --carousel-cta-text: #fff;
+  --carousel-card-bg: #fff;
+  --carousel-gap: 32px;
+
+  color: var(--carousel-text);
+  padding: 0 32px 16px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Scroll track */
+.model-carousel .carousel-track {
+  display: flex;
+  gap: var(--carousel-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+}
+
+.model-carousel .carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each card */
+.model-carousel .carousel-card {
+  flex: 0 0 255px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image area — light circular background behind the car */
+.model-carousel .carousel-card .card-image {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 140px;
+  position: relative;
+  padding: 0 8px;
+}
+
+.model-carousel .carousel-card .card-image::before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 70%;
+  background: #f0f0f0;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.model-carousel .carousel-card .card-image picture,
+.model-carousel .carousel-card .card-image img {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text area */
+.model-carousel .carousel-card .card-body {
+  background: var(--carousel-card-bg);
+  padding: 20px 0 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.model-carousel .carousel-card h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--carousel-text);
+  margin: 0 0 8px;
+  font-family: var(--heading-font-family, sans-serif);
+}
+
+.model-carousel .carousel-card p {
+  font-size: 14px;
+  line-height: 1.25;
+  color: var(--carousel-text);
+  margin: 0 0 16px;
+}
+
+/* CTA button */
+main .model-carousel .carousel-card a.button:any-link,
+main .model-carousel .carousel-card a:any-link {
+  display: inline-block;
+  background: var(--carousel-cta-bg);
+  color: var(--carousel-cta-text);
+  font-size: 14px;
+  line-height: 38px;
+  height: 38px;
+  padding: 0 20px;
+  border: 1px solid var(--carousel-cta-bg);
+  border-radius: 0;
+  text-decoration: none;
+  text-align: center;
+  margin-top: auto;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+main .model-carousel .carousel-card a.button:any-link:hover,
+main .model-carousel .carousel-card a:any-link:hover {
+  background: #001e42;
+  border-color: #001e42;
+  color: var(--carousel-cta-text);
+  text-decoration: none;
+}
+
+main .model-carousel .button-container {
+  display: block;
+  margin-top: auto;
+}
+
+/* Navigation arrows */
+.model-carousel .carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.model-carousel .carousel-nav button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--carousel-text);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.model-carousel .carousel-nav button:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+/* "Explore all models" CTA below the block — in the section default-content-wrapper */
+.model-carousel-container .default-content-wrapper {
+  text-align: center;
+}
+
+main .model-carousel-container .default-content-wrapper a:any-link {
+  display: inline-block;
+  background: var(--carousel-cta-bg, #002c5f);
+  color: #fff;
+  border: 1px solid var(--carousel-cta-bg, #002c5f);
+  border-radius: 0;
+  padding: 0 20px;
+  line-height: 38px;
+  height: 38px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+main .model-carousel-container .default-content-wrapper a:any-link:hover {
+  background: #001e42;
+  border-color: #001e42;
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .model-carousel .carousel-card {
+    flex: 0 0 calc(25% - var(--carousel-gap) * 3 / 4);
+  }
+}
