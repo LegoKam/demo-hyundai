@@ -1,0 +1,64 @@
+.announcement-bar-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.announcement-bar {
+  --bar-bg: #00aad2;
+  --bar-text: #fff;
+  --bar-height: 48px;
+  --bar-font-size: 14px;
+
+  background: var(--bar-bg);
+  color: var(--bar-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--bar-height);
+  padding: 0 16px;
+  text-align: center;
+}
+
+.announcement-bar > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.announcement-bar > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-bar p {
+  margin: 0;
+  font-size: var(--bar-font-size);
+  font-weight: 500;
+  color: var(--bar-text);
+  line-height: 1.4;
+}
+
+main .announcement-bar a:any-link {
+  color: var(--bar-text);
+  text-decoration: underline;
+  font-size: var(--bar-font-size);
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: normal;
+  display: inline;
+}
+
+main .announcement-bar a:any-link:hover {
+  opacity: 0.85;
+}
+
+main .announcement-bar .button-container {
+  display: inline;
+}

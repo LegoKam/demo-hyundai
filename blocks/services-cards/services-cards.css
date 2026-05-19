@@ -1,0 +1,109 @@
+.services-cards-wrapper {
+  background: #f6f3f2;
+  padding: 40px 0 48px;
+  max-width: 100% !important;
+}
+
+.services-cards {
+  --card-bg: #fff;
+  --card-text: #1c1b1b;
+  --card-link-color: #002c5f;
+  --card-title-size: 20px;
+  --card-title-weight: 500;
+  --card-inner-padding: 24px;
+  --card-gap: 30px;
+  --card-border-radius: 2px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Each row = one card */
+.services-cards > div {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+}
+
+/* Image cell */
+.services-cards > div > div:first-child {
+  line-height: 0;
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+  overflow: hidden;
+}
+
+.services-cards > div > div:first-child img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 400 / 212;
+  object-fit: cover;
+}
+
+/* Text cell */
+.services-cards > div > div:last-child {
+  background: var(--card-bg);
+  padding: var(--card-inner-padding);
+  flex: 1;
+  border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+}
+
+.services-cards > div > div:last-child h3 {
+  font-size: var(--card-title-size);
+  font-weight: var(--card-title-weight);
+  color: var(--card-text);
+  margin: 0 0 16px;
+  line-height: 1.3;
+}
+
+.services-cards > div > div:last-child p {
+  margin: 0;
+}
+
+main .services-cards .button-container {
+  display: inline;
+}
+
+main .services-cards a.button:any-link,
+.services-cards > div > div:last-child a {
+  color: var(--card-link-color);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: normal;
+}
+
+main .services-cards a.button:any-link::after,
+.services-cards > div > div:last-child a::after {
+  content: "\203A";
+  font-size: 1.4em;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+main .services-cards a.button:any-link:hover::after,
+.services-cards > div > div:last-child a:hover::after {
+  transform: translateX(4px);
+}
+
+@media (width >= 900px) {
+  .services-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--card-gap);
+    padding: 0 45px;
+  }
+}

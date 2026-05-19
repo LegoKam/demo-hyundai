@@ -1,0 +1,120 @@
+.warranty-bar-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.warranty-bar {
+  --block-bg: #002c5f;
+  --block-accent: #00aad2;
+  --block-separator: rgba(0, 170, 210, 0.2);
+
+  background: var(--block-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  padding: 0;
+  margin: 0;
+}
+
+.warranty-bar > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+  padding: 0 24px;
+  border-right: 1px solid var(--block-separator);
+}
+
+.warranty-bar > div:last-child {
+  border-right: none;
+}
+
+.warranty-bar > div > div {
+  display: flex;
+  align-items: center;
+}
+
+.warranty-bar > div > div:first-child {
+  margin-right: 10px;
+}
+
+.warranty-bar .icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.warranty-bar .icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.warranty-bar p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.warranty-bar a:any-link {
+  color: var(--block-accent);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.warranty-bar a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+main .warranty-bar .button-container {
+  display: inline;
+}
+
+main .warranty-bar a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--block-accent);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+main .warranty-bar a.button:any-link:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+@media (width < 900px) {
+  .warranty-bar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 16px 0;
+  }
+
+  .warranty-bar > div {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--block-separator);
+  }
+
+  .warranty-bar > div:nth-child(odd) {
+    border-right: 1px solid var(--block-separator);
+  }
+
+  .warranty-bar > div:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+}
