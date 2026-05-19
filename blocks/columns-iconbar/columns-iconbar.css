@@ -1,0 +1,109 @@
+/* Block: columns-iconbar -- horizontal icon bar with separator dividers */
+
+/* Background comes from section-metadata navy-blue */
+
+/* Reduce section padding for tight icon bar */
+main .section.navy-blue.columns-iconbar-container {
+  padding: 0;
+}
+
+.columns-iconbar > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.columns-iconbar > div > div {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: calc(50% - 1px);
+  min-height: 75px;
+}
+
+/* Vertical separator between items */
+.columns-iconbar > div > div + div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 1px;
+  height: 80%;
+  background-color: rgb(0 170 210 / 20%);
+}
+
+/* Link item wrapper */
+.columns-iconbar .iconbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.columns-iconbar .iconbar-item:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* Icon styling */
+.columns-iconbar .icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 8px;
+}
+
+.columns-iconbar .icon img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0) invert(1);
+}
+
+/* Label text */
+.columns-iconbar .iconbar-label {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--heading-font-family);
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Override EDS button styling for links in this block */
+.columns-iconbar a.button:any-link {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.columns-iconbar p.button-container {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .columns-iconbar > div {
+    flex-wrap: nowrap;
+  }
+
+  .columns-iconbar > div > div {
+    width: auto;
+    flex: 1 1 auto;
+  }
+}

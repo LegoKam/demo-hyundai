@@ -1,0 +1,337 @@
+/* Tabs Showcase - Tabbed vehicle card carousel */
+
+/* Source: hyundai.com/au/en .tabbed-multi-card-banner-with-rails */
+
+.tabs-showcase-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.tabs-showcase {
+  padding: 20px 0 0;
+  overflow: hidden;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+/* Tab list */
+.tabs-showcase .tabs-showcase-list {
+  display: flex;
+  justify-content: center;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  border-bottom: 1px solid #e4dcd3;
+}
+
+.tabs-showcase .tabs-showcase-list button {
+  flex: 1;
+  max-width: 270px;
+  margin: 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  padding: 10px;
+  background-color: transparent;
+  color: rgb(0 0 0);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.tabs-showcase .tabs-showcase-list button p {
+  margin: 0;
+}
+
+.tabs-showcase .tabs-showcase-list button:hover {
+  color: var(--link-color);
+}
+
+.tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
+  color: var(--link-color);
+  border-bottom-color: var(--link-color);
+}
+
+/* Tab panels */
+.tabs-showcase .tabs-showcase-panel {
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: visible;
+}
+
+.tabs-showcase .tabs-showcase-panel[aria-hidden='true'] {
+  display: none;
+}
+
+/* Carousel container */
+.tabs-showcase .carousel-container {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0 20px;
+}
+
+.tabs-showcase .carousel-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s ease;
+  padding: 0 calc((100% - 800px) / 2);
+}
+
+/* Individual card */
+.tabs-showcase .showcase-card {
+  flex: 0 0 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 28px;
+}
+
+.tabs-showcase .card-copy {
+  padding: 0 15px;
+  margin-bottom: 10px;
+}
+
+.tabs-showcase .card-copy h3 {
+  font-family: var(--heading-font-family);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 50px;
+  color: rgb(0 0 0);
+  margin: 0 0 4px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs-showcase .card-copy p {
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  color: rgb(0 0 0);
+  margin: 0;
+}
+
+.tabs-showcase .card-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs-showcase .card-image picture {
+  display: block;
+  width: 100%;
+}
+
+.tabs-showcase .card-image img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+/* CTA button */
+.tabs-showcase .card-cta {
+  margin-top: 16px;
+}
+
+.tabs-showcase .showcase-btn {
+  display: inline-block;
+  padding: 0 20px;
+  height: 46px;
+  line-height: 46px;
+  background-color: var(--dark-color);
+  color: #fff;
+  border: 1px solid var(--dark-color);
+  border-radius: 0;
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.tabs-showcase .showcase-btn:hover {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Override EDS button styling for links inside the block */
+.tabs-showcase a.button {
+  display: inline-block;
+  padding: 0 20px;
+  height: 46px;
+  line-height: 46px;
+  background-color: var(--dark-color);
+  color: #fff;
+  border: 1px solid var(--dark-color);
+  border-radius: 0;
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.tabs-showcase a.button:hover {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+.tabs-showcase .button-container {
+  margin: 0;
+}
+
+/* Navigation arrows */
+.tabs-showcase .carousel-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.tabs-showcase .carousel-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #c8c8c8;
+  background-color: #fff;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 0;
+}
+
+.tabs-showcase .carousel-arrow:hover {
+  border-color: var(--text-color);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.tabs-showcase .carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.tabs-showcase .carousel-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Pagination dots/dashes */
+.tabs-showcase .carousel-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 0;
+}
+
+.tabs-showcase .carousel-dot {
+  width: 25px;
+  height: 4px;
+  border: none;
+  border-radius: 0;
+  background-color: #c8c8c8;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s;
+}
+
+.tabs-showcase .carousel-dot.active {
+  background-color: var(--dark-color);
+}
+
+.tabs-showcase .carousel-dot:hover {
+  background-color: var(--text-color);
+}
+
+/* Mobile styles (base) */
+@media (width < 600px) {
+  .tabs-showcase .tabs-showcase-list {
+    max-width: 100%;
+  }
+
+  .tabs-showcase .tabs-showcase-list button {
+    font-size: 14px;
+  }
+
+  .tabs-showcase .carousel-track {
+    padding: 0 16px;
+  }
+
+  .tabs-showcase .showcase-card {
+    flex: 0 0 calc(100vw - 32px);
+  }
+
+  .tabs-showcase .card-copy h3 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .tabs-showcase .card-copy p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .tabs-showcase .carousel-nav {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (width >= 600px) and (width < 900px) {
+  .tabs-showcase .carousel-track {
+    padding: 0 calc((100% - 600px) / 2);
+  }
+
+  .tabs-showcase .showcase-card {
+    flex: 0 0 600px;
+  }
+
+  .tabs-showcase .card-copy h3 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .tabs-showcase .card-image img {
+    max-height: 280px;
+  }
+}
+
+/* Desktop */
+@media (width >= 900px) {
+  .tabs-showcase .carousel-track {
+    padding: 0 calc((100% - 800px) / 2);
+  }
+
+  .tabs-showcase .showcase-card {
+    flex: 0 0 800px;
+  }
+
+  .tabs-showcase .carousel-nav {
+    padding: 0 calc((100% - 1100px) / 2);
+  }
+}

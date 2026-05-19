@@ -1,37 +1,109 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
+/* Hero Block — full-width background image with text overlay */
+
+.hero-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
 }
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  min-height: 495px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+.hero > div {
+  display: contents;
 }
 
-.hero picture {
+.hero > div > div {
+  display: contents;
+}
+
+/* Background image cell */
+.hero .hero-image {
   position: absolute;
-  z-index: -1;
   inset: 0;
+  z-index: 0;
+}
+
+.hero .hero-image picture,
+.hero .hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+}
+
+/* Text overlay cell */
+.hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 495px;
   box-sizing: border-box;
 }
 
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.hero h1 {
+  font-size: var(--heading-font-size-xxl, 58px);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  margin: 0 0 0.3em;
+  color: #ffffff;
+  line-height: 1.1;
+  max-width: 600px;
 }
 
-@media (width >= 900px) {
+.hero p {
+  font-size: var(--body-font-size-m, 16px);
+  margin: 0 0 1em;
+  color: #ffffff;
+  max-width: 500px;
+}
+
+main .hero a.button:any-link,
+main .hero .button-container a {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+}
+
+main .hero a.button:any-link:hover,
+main .hero .button-container a:hover {
+  background: #ffffff;
+  color: var(--dark-color, #002c5f);
+  text-decoration: none;
+}
+
+@media (width < 900px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 300px;
+  }
+
+  .hero .hero-content {
+    padding: 30px 20px;
+    min-height: 300px;
+  }
+
+  .hero h1 {
+    font-size: var(--heading-font-size-xl, 28px);
   }
 }

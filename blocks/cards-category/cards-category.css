@@ -1,0 +1,129 @@
+/* Block: cards-category
+ * Portrait image cards with text overlay at bottom.
+ * Source: Hyundai AU homepage "Experience Hyundai range" section.
+ */
+
+/* Full-width block - override section max-width */
+.cards-category-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.cards-category {
+  color: var(--text-color);
+}
+
+.cards-category > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-category > ul > li {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 0%;
+}
+
+/* Image fills card entirely */
+.cards-category .cards-category-card-image {
+  line-height: 0;
+}
+
+.cards-category > ul > li img {
+  width: 100%;
+  aspect-ratio: 960 / 1080;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text overlay positioned over the image */
+.cards-category .cards-category-card-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cards-category .cards-category-card-body h3 {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: var(--heading-font-family);
+  line-height: 1.28;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  margin: 0 0 4px;
+}
+
+.cards-category .cards-category-card-body p {
+  margin: 0;
+}
+
+/* Link styles - source uses dark navy plain link */
+.cards-category .cards-category-card-body a:any-link {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: var(--body-font-family);
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+.cards-category .cards-category-card-body a:hover {
+  color: var(--dark-color);
+  text-decoration: underline;
+}
+
+/* Reset EDS button styles if auto-applied */
+main .cards-category .cards-category-card-body a.button:any-link {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: var(--body-font-family);
+  color: var(--dark-color);
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  display: inline;
+  white-space: normal;
+}
+
+main .cards-category .cards-category-card-body a.button:any-link:hover {
+  background-color: transparent;
+  border: 0;
+  color: var(--dark-color);
+  text-decoration: underline;
+}
+
+/* Button wrapper reset */
+.cards-category .cards-category-card-body p.button-wrapper {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .cards-category > ul {
+    flex-direction: row;
+  }
+
+  .cards-category > ul > li img {
+    /* On desktop source shows ~360x405 which is roughly 8:9 */
+    aspect-ratio: 360 / 405;
+  }
+
+  .cards-category .cards-category-card-body {
+    padding: 40px;
+  }
+
+  .cards-category .cards-category-card-body h3 {
+    font-size: 29px;
+    line-height: 37px;
+  }
+}

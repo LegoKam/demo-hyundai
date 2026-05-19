@@ -1,0 +1,67 @@
+@font-face {
+  font-display: swap;
+  font-family: "Hyundai Sans Head";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://www.hyundai.com/etc.clientlibs/hyundai/clientlibs/au/clientlib-site/resources/fonts/HyundaiSans/HyundaiSansHead-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Hyundai Sans Head";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://www.hyundai.com/etc.clientlibs/hyundai/clientlibs/au/clientlib-site/resources/fonts/HyundaiSans/HyundaiSansHead-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Hyundai Sans Head";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://www.hyundai.com/etc.clientlibs/hyundai/clientlibs/au/clientlib-site/resources/fonts/HyundaiSans/HyundaiSansHead-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Hyundai Sans Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://www.hyundai.com/etc.clientlibs/hyundai/clientlibs/au/clientlib-site/resources/fonts/HyundaiSans/HyundaiSansText-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Hyundai Sans Text";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://www.hyundai.com/etc.clientlibs/hyundai/clientlibs/au/clientlib-site/resources/fonts/HyundaiSans/HyundaiSansText-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Hyundai Sans Text";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://www.hyundai.com/etc.clientlibs/hyundai/clientlibs/au/clientlib-site/resources/fonts/HyundaiSans/HyundaiSansText-Bold.woff2") format("woff2");
+}
+
+:root {
+  --heading-font-family: "Hyundai Sans Head", "Helvetica Neue", arial, sans-serif;
+  --body-font-family: "Hyundai Sans Text", "Helvetica Neue", arial, sans-serif;
+  --background-color: #fff;
+  --text-color: #1c1b1b;
+  --link-color: #00aad2;
+  --link-hover-color: #006c86;
+  --brand-dark: #002c5f;
+  --brand-accent: #00aad2;
+  --section-padding: 40px 0;
+  --nav-height: 60px;
+  --content-max-width: 1120px;
+  --heading-size-xxl: 58px;
+  --heading-size-xl: 25px;
+  --heading-size-l: 30px;
+  --heading-size-m: 14px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+}

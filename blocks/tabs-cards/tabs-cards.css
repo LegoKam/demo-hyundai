@@ -1,0 +1,245 @@
+/* Tabs Cards Block */
+.tabs-cards-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.section:has(.tabs-cards) > div {
+  max-width: 100% !important;
+  text-align: center;
+}
+
+.section:has(.tabs-cards) > div > h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.section:has(.tabs-cards) > div > p {
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 20px;
+}
+
+.tabs-cards {
+  --tc-accent: #00aad2;
+  --tc-cta-bg: #002c5f;
+  --tc-badge-bg: #fd7e14;
+  --tc-heading-size: 36px;
+  --tc-desc-size: 16px;
+  --tc-card-gap: 44px;
+
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Tab navigation */
+.tabs-cards .tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: 0 auto 24px;
+  max-width: 540px;
+  position: relative;
+}
+
+.tabs-cards .tabs-nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.tabs-cards .tabs-nav button {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.tabs-cards .tabs-nav button.active {
+  color: var(--tc-accent);
+}
+
+.tabs-cards .tabs-nav button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--tc-accent);
+  z-index: 1;
+}
+
+/* Tab panels */
+.tabs-cards .tab-panel {
+  display: none;
+}
+
+.tabs-cards .tab-panel.active {
+  display: block;
+}
+
+/* Cards carousel */
+.tabs-cards .cards-track {
+  display: flex;
+  gap: var(--tc-card-gap);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  padding: 0 calc((100vw - 600px) / 2);
+}
+
+.tabs-cards .cards-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual card */
+.tabs-cards .card {
+  flex: 0 0 600px;
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  scroll-snap-align: center;
+}
+
+.tabs-cards .card-content {
+  order: 1;
+  padding: 0 0 0 40px;
+}
+
+.tabs-cards .card-content h3 {
+  font-size: var(--tc-heading-size);
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 6px;
+  line-height: 1.1;
+}
+
+.tabs-cards .card-badge {
+  display: inline-block;
+  background: var(--tc-badge-bg);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.tabs-cards .card-desc {
+  font-size: var(--tc-desc-size);
+  color: #000;
+  margin: 0 0 4px;
+}
+
+.tabs-cards .card-image {
+  order: 2;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.tabs-cards .card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.tabs-cards .card-cta {
+  order: 3;
+  padding: 0 0 0 40px;
+}
+
+main .tabs-cards a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0 20px;
+  background: var(--tc-cta-bg);
+  color: #fff;
+  border: 1px solid var(--tc-cta-bg);
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 46px;
+  white-space: nowrap;
+}
+
+main .tabs-cards a.button:any-link:hover {
+  background: #001f44;
+  border-color: #001f44;
+}
+
+/* Navigation arrows */
+.tabs-cards .tab-panel {
+  position: relative;
+}
+
+.tabs-cards .carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 0 20px;
+}
+
+.tabs-cards .carousel-nav button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #333;
+  transition: border-color 0.2s;
+}
+
+.tabs-cards .carousel-nav button:hover {
+  border-color: #333;
+}
+
+@media (width < 900px) {
+  .tabs-cards .card {
+    flex: 0 0 85vw;
+    min-width: 85vw;
+  }
+
+  .tabs-cards .cards-track {
+    padding: 0 20px;
+  }
+
+  .tabs-cards .card-content h3 {
+    font-size: 28px;
+  }
+
+  .tabs-cards .card-image {
+    height: 180px;
+  }
+
+  .tabs-cards .card-desc {
+    font-size: 16px;
+  }
+}
