@@ -1,0 +1,248 @@
+/* carousel-models block — horizontal scrollable card carousel */
+
+/* slides container */
+.carousel-models .carousel-models-slides-container {
+  position: relative;
+  overflow: hidden;
+  padding: 0 30px;
+}
+
+/* slides list — horizontal scroll */
+.carousel-models .carousel-models-slides,
+.carousel-models .carousel-models-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-models .carousel-models-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: auto hidden;
+  padding-bottom: 30px;
+  gap: 20px;
+}
+
+.carousel-models .carousel-models-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* individual slide/card */
+.carousel-models .carousel-models-slide {
+  flex: 0 0 calc(100% - 40px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: rgb(0 0 0 / 9%) 0 0 35px 0;
+  background-color: var(--background-color);
+  min-height: auto;
+}
+
+/* image area */
+.carousel-models .carousel-models-slide .carousel-models-slide-image {
+  width: 100%;
+  padding: 16px 16px 0;
+  box-sizing: border-box;
+}
+
+.carousel-models .carousel-models-slide .carousel-models-slide-image picture {
+  position: static;
+  display: block;
+}
+
+.carousel-models .carousel-models-slide .carousel-models-slide-image picture > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* content area */
+.carousel-models .carousel-models-slide .carousel-models-slide-content {
+  padding: 16px 24px 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: auto;
+  margin: 0;
+  background-color: transparent;
+  color: var(--text-color);
+  position: static;
+}
+
+/* headings */
+.carousel-models h3 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--heading-font-family);
+  line-height: 22px;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+/* paragraphs */
+.carousel-models p {
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  line-height: 17.5px;
+  color: var(--text-color);
+  margin: 2px 0 0;
+}
+
+/* CTA button — style plain links as buttons */
+.carousel-models .carousel-models-slide-content p:last-child {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.carousel-models .carousel-models-slide-content p:last-child a {
+  background-color: var(--dark-color);
+  color: #fff;
+  border: 1px solid var(--dark-color);
+  border-radius: 0;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--heading-font-family);
+  line-height: 38px;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: normal;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.carousel-models .carousel-models-slide-content p:last-child a:hover,
+.carousel-models .carousel-models-slide-content p:last-child a:focus-visible {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* slide indicators (dots) */
+.carousel-models .carousel-models-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px;
+  line-height: 0;
+}
+
+.carousel-models .carousel-models-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #dadada;
+  border: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.carousel-models .carousel-models-slide-indicator button:disabled,
+.carousel-models .carousel-models-slide-indicator button:hover,
+.carousel-models .carousel-models-slide-indicator button:focus-visible {
+  background-color: var(--dark-color);
+}
+
+/* navigation arrows */
+.carousel-models .carousel-models-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  pointer-events: none;
+  padding: 0 8px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-models .carousel-models-navigation-buttons button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  background-color: rgb(0 44 95 / 80%);
+  transition: background-color 0.2s;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.carousel-models .carousel-models-navigation-buttons button:hover,
+.carousel-models .carousel-models-navigation-buttons button:focus-visible {
+  background-color: var(--dark-color);
+}
+
+.carousel-models .carousel-models-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid #fff;
+  border-bottom: 0;
+  border-left: 0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-models .carousel-models-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* tablet — 2 cards visible */
+@media (width >= 600px) {
+  .carousel-models .carousel-models-slides {
+    gap: 30px;
+  }
+
+  .carousel-models .carousel-models-slide {
+    flex: 0 0 calc(50% - 30px);
+  }
+}
+
+/* desktop — 3-4 cards visible, matches source ~255px per card with 50px gap */
+@media (width >= 900px) {
+  .carousel-models .carousel-models-slides-container {
+    padding: 0 30px;
+  }
+
+  .carousel-models .carousel-models-slides {
+    gap: 50px;
+    padding-bottom: 30px;
+  }
+
+  .carousel-models .carousel-models-slide {
+    flex: 0 0 255px;
+  }
+
+  .carousel-models .carousel-models-slide .carousel-models-slide-content {
+    padding: 16px 24px 24px;
+  }
+
+  .carousel-models .carousel-models-navigation-buttons {
+    left: 0;
+    right: 0;
+    padding: 0 4px;
+  }
+}
